@@ -1,15 +1,17 @@
 "use client";
 
-import React, { PropsWithChildren } from "react";
+import { FC, PropsWithChildren } from "react";
 import { ThemeProvider } from "next-themes";
 import { SessionProvider } from "next-auth/react";
+import Navbar from "@/components/Navbar";
 
 interface ProvidersProps extends PropsWithChildren {}
 
-const Providers: React.FC<ProvidersProps> = ({ children }) => {
+const Providers: FC<ProvidersProps> = ({ children }) => {
   return (
     <ThemeProvider attribute={"class"} defaultTheme={"system"} enableSystem>
       <SessionProvider>
+        {/* @ts-expect-error Server Component */}
         <Navbar />
         {children}
       </SessionProvider>
