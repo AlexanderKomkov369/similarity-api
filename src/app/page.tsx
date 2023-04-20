@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import LargeHeading from "@/ui/LargeHeading";
 import Paragraph from "@/ui/Paragraph";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Similarity API | Home",
@@ -40,6 +41,21 @@ export default function Home() {
             </Link>
             .
           </Paragraph>
+          <div
+            className={
+              "relative aspect-square w-full max-w-lg lg:absolute lg:left-1/2 lg:max-w-3xl"
+            }
+          >
+            <Image
+              priority
+              className={"drop-shadow"}
+              quality={100}
+              style={{ objectFit: "contain" }}
+              fill
+              src={"/typewriter.png"}
+              alt={"typewriter"}
+            />
+          </div>
         </div>
       </div>
     </div>
