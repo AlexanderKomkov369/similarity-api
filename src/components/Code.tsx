@@ -13,6 +13,7 @@ interface CodeProps {
   language: Language;
   animated?: boolean;
   animationDelay?: number;
+  animationSpeed?: number;
 }
 
 const Code: FC<CodeProps> = ({
@@ -21,6 +22,7 @@ const Code: FC<CodeProps> = ({
   language,
   animated,
   animationDelay,
+  animationSpeed,
 }) => {
   const { theme: applicationTheme } = useTheme();
   const [text, setText] = useState(animated ? "" : code);
@@ -38,7 +40,7 @@ const Code: FC<CodeProps> = ({
           }
 
           return () => clearInterval(intervalId);
-        }, 15);
+        }, animationSpeed ?? 15);
       }, animationDelay ?? 150);
     }
   }, [code, show, animated, animationDelay]);
@@ -54,9 +56,12 @@ const Code: FC<CodeProps> = ({
         <pre
           className={cn(
             className,
-            "transition-all w-fit bg-transparent duration-100 py-0 no-scrollbar"
+            "transition-all w-fit bg-transparent duration-100 py-0 mb-150 no-scrollbar"
           )}
-          style={{ maxHeight: show ? lines * 24 : 0, opacity: show ? 1 : 0 }}
+          style={{
+            maxHeight: show ? lines * 24 : 0,
+            opacity: show ? 1 : 0,
+          }}
         >
           {tokens.map((line, i) => {
             const { key, ...rest } = getLineProps({ line, key: i });
