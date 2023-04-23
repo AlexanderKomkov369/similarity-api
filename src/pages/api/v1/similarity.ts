@@ -1,7 +1,7 @@
 import { withMethods } from "@/lib/api-middlewares/with-methods";
 import { z } from "zod";
 import { NextApiRequest, NextApiResponse } from "next";
-import { INTERNAL_SERVER_ERROR, UNAUTHORIZED } from "@/constants/errors";
+import { INTERNAL_SERVER_ERROR, UNAUTHORIZED_ERROR } from "@/constants/errors";
 import { db } from "@/lib/db";
 import { openai } from "@/lib/openai";
 import { cosineSimilarity } from "@/helpers/cosine-similarity";
@@ -20,7 +20,7 @@ const handler = async (
 
   const apiKey = req.headers.authorization;
   if (!apiKey) {
-    return res.status(401).json({ error: UNAUTHORIZED });
+    return res.status(401).json({ error: UNAUTHORIZED_ERROR });
   }
 
   try {
@@ -35,7 +35,7 @@ const handler = async (
 
     if (!validApiKey) {
       return res.status(401).json({
-        error: UNAUTHORIZED,
+        error: UNAUTHORIZED_ERROR,
       });
     }
 

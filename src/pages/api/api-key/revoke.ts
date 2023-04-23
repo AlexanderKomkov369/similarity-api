@@ -5,7 +5,7 @@ import { authOptions } from "@/lib/auth";
 import { RevokeApiData } from "@/types/api";
 import { db } from "@/lib/db";
 import { z } from "zod";
-import { INTERNAL_SERVER_ERROR, UNAUTHORIZED } from "@/constants/errors";
+import { INTERNAL_SERVER_ERROR, UNAUTHORIZED_ERROR } from "@/constants/errors";
 
 const handler = async (
   req: NextApiRequest,
@@ -18,7 +18,7 @@ const handler = async (
 
     if (!user) {
       return res.status(401).json({
-        error: UNAUTHORIZED,
+        error: UNAUTHORIZED_ERROR,
         success: false,
       });
     }

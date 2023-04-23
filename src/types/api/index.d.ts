@@ -1,7 +1,7 @@
 import { ZodIssue } from "zod";
 import { ApiKey } from ".prisma/client";
 import { Method } from "axios";
-import { INTERNAL_SERVER_ERROR, UNAUTHORIZED } from "@/constants/errors";
+import { INTERNAL_SERVER_ERROR, UNAUTHORIZED_ERROR } from "@/constants/errors";
 
 export interface CreateApiData {
   error: string | ZodIssue[] | null;
@@ -21,7 +21,7 @@ export type SimilarityApiData =
       similarity: number;
     }
   | {
-      error: INTERNAL_SERVER_ERROR | UNAUTHORIZED;
+      error: INTERNAL_SERVER_ERROR | UNAUTHORIZED_ERROR;
     };
 
 declare module "next" {
