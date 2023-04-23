@@ -6,6 +6,7 @@ import { db } from "@/lib/db";
 import { nanoid } from "nanoid";
 import { z } from "zod";
 import { withMethods } from "@/lib/api-middlewares/with-methods";
+import { INTERNAL_SERVER_ERROR } from "@/constants/errors";
 
 const handler = async (
   req: NextApiRequest,
@@ -57,7 +58,7 @@ const handler = async (
     }
 
     return res.status(500).json({
-      error: "Internal server error",
+      error: INTERNAL_SERVER_ERROR,
       createdApiKey: null,
     });
   }

@@ -78,7 +78,7 @@ const Table: FC<TableProps> = ({ userRequests }) => {
     col1: request.usedApiKey,
     col2: request.path,
     col3: `${request.timestamp} ago`,
-    col4: `${request.duration} ago`,
+    col4: `${request.duration} ms`,
     col5: request.status,
   }));
 

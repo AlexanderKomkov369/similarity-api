@@ -5,6 +5,7 @@ import { authOptions } from "@/lib/auth";
 import { RevokeApiData } from "@/types/api";
 import { db } from "@/lib/db";
 import { z } from "zod";
+import { INTERNAL_SERVER_ERROR, UNAUTHORIZED } from "@/constants/errors";
 
 const handler = async (
   req: NextApiRequest,
@@ -17,7 +18,7 @@ const handler = async (
 
     if (!user) {
       return res.status(401).json({
-        error: "Unauthorized",
+        error: UNAUTHORIZED,
         success: false,
       });
     }
@@ -56,7 +57,7 @@ const handler = async (
     }
 
     return res.status(500).json({
-      error: "Internal server error",
+      error: INTERNAL_SERVER_ERROR,
       success: false,
     });
   }
