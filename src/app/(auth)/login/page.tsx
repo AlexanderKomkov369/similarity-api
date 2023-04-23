@@ -10,12 +10,12 @@ const Page: FC = ({}) => {
   return (
     <div
       className={
-        "absolute inset-0 mx-auto container flex h-screen flex-col justify-center items-center"
+        "container absolute inset-0 mx-auto flex h-screen flex-col items-center justify-center"
       }
     >
       <div
         className={
-          "mx-auto flex w-full flex-col justify-center space-y-6 max-w-lg"
+          "mx-auto flex w-full max-w-lg flex-col justify-center space-y-6"
         }
       >
         <div className={"flex flex-col items-center gap-6 text-center"}>
@@ -23,7 +23,7 @@ const Page: FC = ({}) => {
             href={"/"}
             className={buttonVariants({ variant: "ghost", className: "w-fit" })}
           >
-            <Icons.ChevronLeft className={"mr-2 w-4 h-4"} />
+            <Icons.ChevronLeft className={"mr-2 h-4 w-4"} />
             Back to Home
           </Link>
 

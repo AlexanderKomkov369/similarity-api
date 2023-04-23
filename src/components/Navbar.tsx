@@ -12,12 +12,12 @@ const Navbar = async () => {
   return (
     <div
       className={
-        "fixed backdrop-blur-sm bg-white/75 dark:bg-slate-900 z-50 top-0 left-0 right-0 h-20 border-b border-slate-300 dark:border-slate-700 shadow-sm flex items-center justify-between"
+        "fixed left-0 right-0 top-0 z-50 flex h-20 items-center justify-between border-b border-slate-300 bg-white/75 shadow-sm backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900"
       }
     >
       <div
         className={
-          "container max-w-7xl mx-auto w-full flex justify-between items-center"
+          "container mx-auto flex w-full max-w-7xl items-center justify-between"
         }
       >
         <Link href={"/"} className={buttonVariants({ variant: "link" })}>
@@ -26,7 +26,7 @@ const Navbar = async () => {
         <div className={"md:hidden"}>
           <ThemeToggle />
         </div>
-        <div className={"hidden md:flex gap-4"}>
+        <div className={"hidden gap-4 md:flex"}>
           <ThemeToggle />
           <Link
             href={"/documentation"}

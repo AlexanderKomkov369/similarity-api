@@ -15,7 +15,7 @@ interface PageProps {}
 
 const Page: FC<PageProps> = ({}) => {
   return (
-    <div className={"container mx-auto pb-12 mt-12 max-w-7xl"}>
+    <div className={"container mx-auto mt-12 max-w-7xl pb-12"}>
       <div className={"flex flex-col items-center gap-6"}>
         <LargeHeading>Making a request</LargeHeading>
         <Paragraph>api/v1/similarity</Paragraph>

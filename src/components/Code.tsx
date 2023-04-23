@@ -43,7 +43,7 @@ const Code: FC<CodeProps> = ({
         }, animationSpeed ?? 15);
       }, animationDelay ?? 200);
     }
-  }, [code, show, animated, animationDelay]);
+  }, [code, show, animated, animationDelay, animationSpeed]);
 
   // number of lines
   const lines = text.split(/\r\n|\r|\n/).length;

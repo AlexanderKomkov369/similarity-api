@@ -52,7 +52,7 @@ const ApiDashboard = async ({}) => {
         />
       </div>
 
-      <Paragraph className={"text-center md:text-left mt-4 -mb-4"}>
+      <Paragraph className={"-mb-4 mt-4 text-center md:text-left"}>
         Your API history:
       </Paragraph>
 

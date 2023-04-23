@@ -15,7 +15,7 @@ enum TabsValue {
 
 const DocumentationTabs: FC<DocumentationTabsProps> = ({}) => {
   return (
-    <Tabs defaultValue={TabsValue.NodeJS} className={"max-w-2xl w-full"}>
+    <Tabs defaultValue={TabsValue.NodeJS} className={"w-full max-w-2xl"}>
       <TabsList>
         <TabsTrigger value={TabsValue.NodeJS}>NodeJS</TabsTrigger>
         <TabsTrigger value={TabsValue.Python}>Python</TabsTrigger>

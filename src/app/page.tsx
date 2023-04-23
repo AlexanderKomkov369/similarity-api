@@ -34,7 +34,7 @@ export default function Home() {
             <Link
               href={"/login"}
               className={
-                "underline underline-offset-2 text-black dark:text-light-gold"
+                "text-black underline underline-offset-2 dark:text-light-gold"
               }
             >
               API Key

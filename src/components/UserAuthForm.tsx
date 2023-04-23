@@ -31,7 +31,7 @@ const UserAuthForm: FC = ({}) => {
       <Button
         onClick={loginWithGoogle}
         isLoading={isLoading}
-        className={"max-w-sm w-full"}
+        className={"w-full max-w-sm"}
       >
         {isLoading ? null : Svg.googleLogo}
         Google
